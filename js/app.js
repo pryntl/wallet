@@ -42,8 +42,15 @@ function getExpense(e) {
     li.appendChild(span);
     li.appendChild(span2);
     ul.appendChild(li);
+   minus()
+    
     //afterwards the inputs become empty again
     expense.value = "";
     amount.value = "";
   }
+}
+function minus(){
+  let total = document.querySelector("#total");
+  let left = document.querySelector("#left");
+  left.textContent = Number(total.textContent) - Number(amount.value);
 }
