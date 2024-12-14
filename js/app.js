@@ -27,6 +27,10 @@ function getExpense(e) {
   e.preventDefault();
   const expense = document.querySelector("#expense");
   const amount = document.querySelector("#amount");
+  const left = document.querySelector('#left')
+  let numberAmount = Number(amount.value);
+    let leftNumber = Number(left.textContent);
+   
   //if the expense input or amount input is empty, tell the user to fill them up
   if (expense.value == "" || amount.value == "") {
     alert("Please Fill All Fields");
@@ -37,20 +41,16 @@ function getExpense(e) {
     const li = document.createElement("li");
     const span = document.createElement("span");
     const span2 = document.createElement("span");
-    span.textContent = expense.value;
-    span2.textContent = amount.value;
+    span.textContent = expense;
+    span2.textContent = amount;
     li.appendChild(span);
     li.appendChild(span2);
     ul.appendChild(li);
-   minus()
-    
+   
+    left.textContent = leftNumber - numberAmount;
     //afterwards the inputs become empty again
     expense.value = "";
     amount.value = "";
   }
 }
-function minus(){
-  let total = document.querySelector("#total");
-  let left = document.querySelector("#left");
-  left.textContent = Number(total.textContent) - Number(amount.value);
-}
+
